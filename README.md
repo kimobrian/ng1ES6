@@ -81,4 +81,4 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 # License
 
-[MIT](/LICENSE)
+[GPL-2.0](https://github.com/kimobrian/ng1ES6/blob/master/LICENSE)
