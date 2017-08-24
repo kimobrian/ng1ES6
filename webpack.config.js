@@ -4,6 +4,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
@@ -31,7 +32,7 @@ module.exports = function makeConfig(){
       rules: [
               {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                use: 'babel-loader',
                 exclude: [
                   /node_modules/,
                   /\.spec\.js$/
@@ -69,7 +70,10 @@ module.exports = function makeConfig(){
           template: './src/public/index.html',
           inject: 'body'
         }),
-        new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true})
+        new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true}),
+        new ngAnnotatePlugin({
+            add: true
+        })
     ];
 
     if(isProd) {

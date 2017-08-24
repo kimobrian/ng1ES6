@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/preboot/angularjs-webpack",
   "dependencies": {
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "angular-ui-router": "^1.0.3"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
@@ -48,6 +49,7 @@
     "karma-spec-reporter": "^0.0.31",
     "karma-webpack": "2.0.1",
     "mocha": "^3.5.0",
+    "ng-annotate-webpack-plugin": "^0.2.1-pre",
     "node-libs-browser": "2.0.0",
     "node-sass": "^4.5.3",
     "null-loader": "^0.1.1",
