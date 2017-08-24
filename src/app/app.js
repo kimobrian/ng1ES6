@@ -2,14 +2,6 @@ import angular from 'angular';
 
 import '../style/app.scss';
 
-let app = () => {
-  return {
-    template: require('./app.html'),
-    controller: 'AppCtrl',
-    controllerAs: 'app'
-  }
-};
-
 class AppDirective {
     constructor() {
         this.restrict = 'E';
