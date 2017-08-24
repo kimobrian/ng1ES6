@@ -14,13 +14,7 @@ describe('app', () => {
     });
 
     it('should contain the starter url', () => {
-      expect(ctrl.url).toBe('https://github.com/preboot/angular-webpack');
-    });
-  });
-
-  describe('Another Test', () => {
-    it('should contain the starter url', () => {
-      expect("book").toBe('book');
+      expect(ctrl.url).toBe('https://github.com/kimobrian/ng1ES6');
     });
   });
 });
