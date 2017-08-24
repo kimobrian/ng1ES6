@@ -13,14 +13,18 @@ class AppDirective {
 
 class AppCtrl {
   constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
+
+  }
+
+  $onInit() {
+      this.url = 'https://github.com/kimobrian/ng1ES6';
   }
 }
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
+let app = angular.module(MODULE_NAME, [])
   .directive('app', () => new AppDirective())
   .controller('AppCtrl', AppCtrl);
 
-export default MODULE_NAME;
+export default app;
