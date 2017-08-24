@@ -16,12 +16,12 @@ class AppCtrl {
   constructor(mathSvc) {
       'ngInject'
       this.mathSvc = mathSvc;
+      this.url = 'https://github.com/kimobrian/ng1ES6';
   }
 
   $onInit() {
       this.a = 'John';
       this.b = 'Doe';
-      this.url = `https://github.com/kimobrian/ng1ES6`;
       this.fullName = this.a + ' '+ this.b;
   }
 
@@ -41,7 +41,7 @@ let testComponent = {
 
 const MODULE_NAME = 'app';
 
-let app = angular.module(MODULE_NAME, [MathModule.name, uiRouter])
+angular.module(MODULE_NAME, [MathModule.name, uiRouter])
   .directive('app', () => new AppDirective())
   .component('test', testComponent)
   .controller('AppCtrl', AppCtrl)
@@ -59,4 +59,4 @@ let app = angular.module(MODULE_NAME, [MathModule.name, uiRouter])
       $urlRouterProvider.otherwise('/home')
   })
 
-export default app;
+export default MODULE_NAME;
