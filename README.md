@@ -2,18 +2,15 @@
 
 A complete, yet simple, starter for AngularJS using Webpack.
 
-This workflow serves as a starting point for building AngularJS (1.x) applications using Webpack 2.x. Should be noted that apart from the pre-installed angular package, this workflow is pretty much generic.
+### Features
 
-* Heavily commented webpack configuration with reasonable defaults.
-* ES6, and ES7 support with babel.
-* Source maps included in all builds.
-* Development server with live reload.
-* Production builds with cache busting.
-* Testing environment using karma to run tests and jasmine as the framework.
-* Code coverage when tests are run.
-* No gulp and no grunt, just npm scripts.
-
->Warning: Make sure you're using the latest version of Node.js and NPM
+* Webpack.
+* AngularJS component(Replacement of directive).
+* Dependency Injection(DI).
+* Bootstrap.
+* Testing using Karma and Jasmine.
+* ES6 and ES7 support.
+* Live reload on Development server.
 
 ### Quick start
 
@@ -24,7 +21,7 @@ This workflow serves as a starting point for building AngularJS (1.x) applicatio
 $ git clone https://github.com/kimobrian/ng1ES6.git
 
 # change directory to your app
-$ cd my-app
+$ cd angularjs-webpackt
 
 # install the dependencies with npm
 $ npm install
