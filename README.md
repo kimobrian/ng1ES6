@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/kimobrian/ng1ES6/tree/develop.svg?style=svg)](https://circleci.com/gh/kimobrian/ng1ES6/tree/develop)
+[![Coverage Status](https://coveralls.io/repos/github/kimobrian/ng1ES6/badge.svg?branch=develop)](https://coveralls.io/github/kimobrian/ng1ES6?branch=develop)
 
 # ng1ES6
 
