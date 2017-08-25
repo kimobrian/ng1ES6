@@ -2,7 +2,7 @@
 module.exports = function karmaConfig (config) {
   config.set({
     frameworks: ['jasmine'],
-    reporters: ['mocha', 'coverage', 'istanbul'],
+    reporters: ['mocha', 'coverage', 'istanbul', 'coveralls'],
     mochaReporter: {
       colors: {
         success: 'green',
@@ -32,7 +32,8 @@ module.exports = function karmaConfig (config) {
       dir: 'coverage/',
       reporters: [
         {type: 'text-summary'},
-        {type: 'html'}
+        {type: 'html'},
+        {type: 'lcov'}
       ]
     },
 
@@ -64,6 +65,7 @@ module.exports = function karmaConfig (config) {
         'karma-phantomjs-launcher',
         'karma-sourcemap-loader',
         'karma-webpack',
+        'karma-coveralls',
         "karma-mocha-reporter",
     ],
   });
