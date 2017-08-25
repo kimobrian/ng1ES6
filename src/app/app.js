@@ -41,7 +41,7 @@ let testComponent = {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [MathModule.name, uiRouter])
+angular.module(MODULE_NAME, [MathModule, uiRouter])
   .directive('app', () => new AppDirective())
   .component('test', testComponent)
   .controller('AppCtrl', AppCtrl)

@@ -1,6 +1,6 @@
 import app from './app';
 
-describe('app', () => {
+describe('Main App Module', () => {
 
   describe('AppCtrl', () => {
     let ctrl;
