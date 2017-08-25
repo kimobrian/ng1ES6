@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/kimobrian/ng1ES6/tree/develop.svg?style=svg)](https://circleci.com/gh/kimobrian/ng1ES6/tree/develop)
+
 # ng1ES6
 
 A complete, yet simple, starter for AngularJS using Webpack.
