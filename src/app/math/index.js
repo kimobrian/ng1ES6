@@ -3,9 +3,9 @@ import MathComponent from './math.component';
 import MathService from  './math.svc';
 import angular from 'angular';
 
-let app =  angular.module('math', [])
+let math =  angular.module('math', [])
     .component('mathComponent', MathComponent)
     .service('mathSvc', MathService)
     .controller('mathCtrl', MathController)
 
-module.exports = app;
+export default math.name;
