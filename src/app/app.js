@@ -3,13 +3,10 @@ import MathModule from './math';
 import uiRouter from 'angular-ui-router';
 import '../style/app.scss';
 
-class AppDirective {
-    constructor() {
-        this.restrict = 'E';
-        this.template = require('./app.html');
-        this.controller = 'AppCtrl';
-        this.controllerAs = 'app'
-    }
+let appComponent = {
+    template: require('./app.html'),
+    controller: 'AppCtrl',
+    controllerAs: 'app'
 }
 
 class AppCtrl {
@@ -23,15 +20,15 @@ class AppCtrl {
       this.a = 'John';
       this.b = 'Doe';
       this.fullName = this.a + ' '+ this.b;
+
+      this.c = 5;
+      this.d =10;
+      this.product = this.mathSvc.product(this.c, this.d);
   }
 
   $doCheck() {
-      var previousValue;
-      var currentValue = this.a + ' '+ this.b;
-      if (previousValue !== currentValue) {
-        this.fullName = this.a + ' '+ this.b;
-        previousValue = currentValue;
-      }
+      this.fullName = this.a + ' '+ this.b;
+      this.product = this.mathSvc.product(this.c, this.d);
   }
 }
 
@@ -39,10 +36,8 @@ let testComponent = {
     template: '<p>This is a test component</p>'
 }
 
-const MODULE_NAME = 'app';
-
-angular.module(MODULE_NAME, [MathModule, uiRouter])
-  .directive('app', () => new AppDirective())
+let app = angular.module("app", [MathModule, uiRouter])
+  .component('app', appComponent)
   .component('test', testComponent)
   .controller('AppCtrl', AppCtrl)
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -59,4 +54,4 @@ angular.module(MODULE_NAME, [MathModule, uiRouter])
       $urlRouterProvider.otherwise('/home')
   })
 
-export default MODULE_NAME;
+export default app.name;

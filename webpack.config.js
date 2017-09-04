@@ -40,26 +40,31 @@ module.exports = function makeConfig(){
               },
               {
                 test: /\.html$/,
-                loader: 'raw-loader'
+                use: 'raw-loader'
               },
               {
                 test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-                loader: 'file-loader'
+                use: 'file-loader'
               },
               {
                   test: /\.css$/,
                   use: isTest ? 'null-loader' : ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    loader: [
-                      { loader: 'css-loader', query: {sourceMap: true}},
+                    use: [
+                      { loader: 'css-loader'},
                       { loader: 'postcss-loader'}
                     ],
                   })
               },
               {
                 test: /\.(sass|scss)$/,
-                loader: ExtractTextPlugin.extract({
-                    loader: ['style-loader','css-loader', 'sass-loader','postcss-loader']
+                use: isTest ? 'null-loader' : ExtractTextPlugin.extract({
+                    use: [
+                        { loader:"css-loader" },
+                        { loader:"sass-loader" },
+                        { loader:"postcss-loader" }
+                    ],
+                    fallback: 'style-loader'
                 })
               }
           ]
