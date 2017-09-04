@@ -3,6 +3,7 @@ let MathComponent = {
         name: '=?'
      },
     template: require('./math.tpl.html'),
+    controller:'mathCtrl',
     controllerAs: 'vm'
 }
 
