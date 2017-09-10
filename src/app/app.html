@@ -2,7 +2,7 @@
   <h1 class="title">ng1ES6 Setup</h1>
 
   <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/logo.png">
+  <img class="logo" src="/img/logo.png">
   <div class="row">
       <div class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4">
           <h2><a ng-href="{{app.url}}">Webpack Angular Starter 1</a></h2>
@@ -16,7 +16,7 @@
               <input type="number" ng-model="app.d" class="form-control"><br/>
               <h4>{{app.product}}</h4>
           </div>
-          <span><a ui-sref="home">Home</a>|<a ui-sref="test">Test</a></span>
+          <span><a ui-sref="home">Home</a>|<a ui-sref="test">Test</a>|<a ui-sref="firebase">Firebase</a>|<a ui-sref="http">Http</a></span>
           <ui-view></ui-view>
       </div>
   </div>
