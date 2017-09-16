@@ -20,7 +20,7 @@
 <div class="row">
     <div class="col-lg-4 col-lg-3-offset">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="item in vm.items"> {{item.name}} Ksh.{{item.price | number:2}}</li><br/>
+            <li class="list-group-item" ng-repeat="(key, value) in vm.items"> {{value.name}} Ksh.{{value.price | number:2}}<span class="pull-right delete" ng-click="vm.removeItem(key)" title="Delete">X</span></li><br/>
         </ul>
     </div>
 </div>

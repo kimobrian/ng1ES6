@@ -17,10 +17,6 @@ class FirebaseService {
     });
     this.db = firebase.database();
     this.firebaseRef = firebase.database().ref('items/');
-    // this.firebaseRef.on('value', function(snapshot) {
-    // //   updateStarCount(postElement, snapshot.val());
-    //     console.log('New Snapshot:', snapshot.val());
-    // });
   }
 
   writeUserData(userId, name, email, imageUrl) {
@@ -46,6 +42,16 @@ class FirebaseService {
               cb();
           }
       })
+  }
+
+  removeItem(itemIndex, cb) {
+      this.firebaseRef.child(itemIndex).remove((err)=> {
+          if(err) {
+              console.log('Error:', err.message)
+          } else {
+              cb();
+          }
+      });
   }
 }
 

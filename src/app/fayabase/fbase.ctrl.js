@@ -10,7 +10,7 @@ class FirebaseController {
 
     this.firebaseRef = firebase.database().ref('items/');
     this.firebaseRef.on('value', (snapshot)=> {
-        this.items = Object.values(snapshot.val());
+        this.items = snapshot.val();
         $scope.$applyAsync();
     });
   }
@@ -30,6 +30,12 @@ class FirebaseController {
           this.name = '';
           this.price = '';
           this.$scope.$applyAsync();
+      });
+  }
+
+  removeItem(itemIndex) {
+      this.firebaseSvc.removeItem(itemIndex, ()=> {
+          console.log('<Deleted>');
       });
   }
 }
