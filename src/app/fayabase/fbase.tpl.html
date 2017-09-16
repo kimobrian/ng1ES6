@@ -1,0 +1,26 @@
+<h4>Firebase Component {{vm.url}}</h4>
+<div class="row">
+    <div class="col-lg-6">
+        <input type="text" name="item_name" id="item_name" class="form-control" placeholder="Item Name" ng-model="vm.name">
+    </div><br/>
+    <div class="col-lg-6">
+        <input type="number" name="item_price" id="item_name" class="form-control" placeholder="Item Price" ng-model="vm.price">
+    </div>
+</div><br/>
+<div class="row">
+    <div class="alert alert-danger" ng-if="vm.errors.name">{{vm.errors.name}}</div>
+    <div class="alert alert-danger" ng-if="vm.errors.price">{{vm.errors.price}}</div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+        <button class="btn btn-primary" value="Save Info" ng-click="vm.saveData()">Save Info</button>
+    </div>
+</div><br/>
+<div class="row">
+    <div class="col-lg-4 col-lg-3-offset">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="item in vm.items"> {{item.name}} Ksh.{{item.price | number:2}}</li><br/>
+        </ul>
+    </div>
+</div>
