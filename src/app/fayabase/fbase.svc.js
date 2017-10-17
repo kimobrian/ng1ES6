@@ -16,7 +16,7 @@ class FirebaseService {
       }
     });
     this.db = firebase.database();
-    this.firebaseRef = firebase.database().ref('items/');
+    this.firebaseRef = this.db.ref('items/others/');
   }
 
   writeUserData(userId, name, email, imageUrl) {

@@ -8,7 +8,7 @@ class FirebaseController {
     this.errors = {};
     this.$scope = $scope;
 
-    this.firebaseRef = firebase.database().ref('items/');
+    this.firebaseRef = firebase.database().ref('items/others/');
     this.firebaseRef.on('value', (snapshot)=> {
         this.items = snapshot.val();
         $scope.$applyAsync();
@@ -37,6 +37,19 @@ class FirebaseController {
       this.firebaseSvc.removeItem(itemIndex, ()=> {
           console.log('<Deleted>');
       });
+  }
+
+  toggleEdit(key) {
+      this.editing = key;
+  }
+
+  updateItem(evt,key) {
+      if(evt.which === 13) {
+          this.firebaseRef.child(key).update({ name: evt.target.value }).then(()=>{
+              this.editing = false;
+              this.$scope.$applyAsync();
+          })
+      }
   }
 }
 

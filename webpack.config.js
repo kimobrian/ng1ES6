@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+require('dotenv').config()
 
 var ENV = process.env.npm_lifecycle_event;
 var isTest = ENV === 'test' || ENV === 'test-watch';
@@ -78,6 +79,13 @@ module.exports = function makeConfig(){
         new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true}),
         new ngAnnotatePlugin({
             add: true
+        }),
+        new webpack.DefinePlugin({
+            FIREBASE_API_KEY: JSON.stringify(process.env.FIREBASE_API_KEY),
+            FIREBASE_AUTH_DOMAIN: JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+            FIREBASE_DATABASE_URL: JSON.stringify(process.env.FIREBASE_DATABASE_URL),
+            FIREBASE_USER_EMAIL: JSON.stringify(process.env.FIREBASE_USER_EMAIL),
+            FIREBASE_USER_PASSWORD: JSON.stringify(process.env.FIREBASE_USER_PASSWORD)
         })
     ];
 

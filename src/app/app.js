@@ -1,6 +1,7 @@
 import angular from 'angular';
 import MathModule from './math';
 import uiRouter from 'angular-ui-router';
+import FirebaseModule from './fayabase'
 import '../style/app.scss';
 
 let appComponent = {
@@ -36,7 +37,7 @@ let testComponent = {
     template: '<p>This is a test component</p>'
 }
 
-let app = angular.module("app", [MathModule, uiRouter])
+let app = angular.module("app", [MathModule, uiRouter, FirebaseModule])
   .component('app', appComponent)
   .component('test', testComponent)
   .controller('AppCtrl', AppCtrl)
@@ -50,6 +51,10 @@ let app = angular.module("app", [MathModule, uiRouter])
             .state('test', {
                 url:'/test',
                 component: 'test'
+            })
+            .state('fbase', {
+                url:'/fbase',
+                component: 'firebaseComponent'
             })
       $urlRouterProvider.otherwise('/home')
   })

@@ -50,6 +50,11 @@ module.exports = function karmaConfig (config) {
                 { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/, use: 'file-loader'},
                 { test: /\.(css|sass|scss)$/, use: 'null-loader' }
                 ]
+        },
+        node: {
+          net: 'empty',
+          tls: 'empty',
+          fs: 'empty'
         }
     },
 
